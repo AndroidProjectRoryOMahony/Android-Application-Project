@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Smart_Grid_V2</string>
+    <string name="app_title">Campus Smart Grid\nApplication</string>
+    <string name="created_by">Created By Rory O\'Mahony</string>
+    <string name="app_display_data">Display Data</string>
+    <string name="app_map">Data Map</string>
+    <string name="app_settings">Settings</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_display_data_options">DisplayDataOptions</string>
+    <string name="hello_world">Hello world!</string>
+    //Display data activity strings
+    //PI server locations string array        <string name="select_pi_server_locations">Location:</string>
+
+    <string-array name="pi_server_locations">
+        <item>Place 1</item>
+        <item>Place 2</item>
+        <item>Place 3</item>
+    </string-array>
+    //Data type string array        <string name="select_data_type_to_display">Data Type:</string>
+
+    <string-array name="data_types">
+        <item>Place 1</item>
+        <item>Place 2</item>
+        <item>Place 3</item>
+    </string-array>
+    //User option: display data
+    <string name="select_data_to_display_from">Data From:</string>
+    <string name="select_data_to_display_to">Data To:</string>
+    <string name="select_data_to_display_date">Date:</string>
+    <string name="select_data_to_display_time">Time:</string>
+    <string name="selected_data_to_display_date_from">01/01/2015</string>
+    <string name="selected_data_to_display_date_to">01/01/2015</string>
+    <string name="selected_data_to_display_time_from">12:00:00</string>
+    <string name="selected_data_to_display_time_to">12:00:00</string>
+    <string name="select_date">Select Date</string>
+    <string name="select_time">Select Time</string>
+    //submit user choices string
+    <string name="submit_user_options">Display data with selected range</string>
+    <string name="display_live_value">Display live data only</string>
+    <string name="title_activity_display_data_graphically">DisplayDataGraphicallyActivity</string>
+    <string name="data_range_displayed">Data Time Frame Example:</string>
+    <string name="data_displayed_day_date_month_year">Wed 25th Feb 2015 - Thur 26th Feb 2015</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    //Database strings
+    <string name="location">Location</string>
+    <string name="data_type">Data Type</string>
+    <string name="web_id">Web ID</string>
+    //Data Calculation Types
+    <string name="statistics">Statistics</string>
+
+
+</resources>

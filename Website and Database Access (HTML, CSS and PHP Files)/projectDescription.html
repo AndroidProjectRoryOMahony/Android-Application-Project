@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<!--The following websites were used to aid the development of the project's code. Parts of the project code have been adapted from these websites:
+w3schools. (N.D) AJAX Example Available from http://www.w3schools.com/ajax/tryit.asp?filename=tryajax_first [Accessed 23/11/2014] For connecting to the PHP script
+-->
+
+<html>
+    <head>
+		<title>UoM Smart Grid</title> <!-- The tab's title -->
+        <link rel='stylesheet' type='text/css' href='stylesheet.css'/>
+	</head>
+	<body>
+	
+		<div class = "header" id = "mainHeader">
+			<img class = "manchesterLogo" src = "manchesterLogo.png">
+			<div class = "pageHeader">
+                <h5>The Project</h5>
+            </div>
+		</div>
+        
+        <div class = "NavWrapper"> 
+            <div class = "navigationBar"> 
+                <a href="index.html">Home</a>
+                <a href="projectDescription.html">The Project</a>
+				<a href="equipmentProfiles.html">Equipment Profiles</a>
+                <a href="addEquipment.html">Add Equipment</a>
+                <a href="modifyDatabase.html">Modify Database</a>
+				<a href="equipmentMap.html">Equipment Map</a>
+                <a href="dataEmulation.html">Data Emulation</a>
+			</div>
+        </div>   
+		
+		<div class = "body" id = "mainBody">
+            
+			<div class = "wrapper">
+                <div class = "leftJustified">
+                     <img class = "androidImage" src = "android.png" style = "width: 460px">
+                </div>
+                
+                <div class = "rightJustified" style = "width: 500px;">
+                    <p style = "margin-top: 20%; text-align: justify;">The project focuses on developing an Android application that will be used to connect with several data storage systems around The University of Manchester.  </p>
+                    <br>
+                    <p style = "text-align: justify;"> The application will download data from these systems and display the information graphically/textually, allowing trends and errors to be discovered.</p>
+                </div>
+            </div>
+            
+            <div class = "wrapper">
+                <div class = "leftJustified" style = "width: 500px;">
+                     <p style = "margin-top: 10%; text-align: justify;">The NI CompactRIO will be used to measure various data types around the campus. This data will be stored using PI servers from OSIsoft which will allow the application to access both live and historic data.</p>
+                    <br>
+                    <p style = "text-align: justify;">A database (accessible below) contains all the information on the currently installed cRIO systems around the university.</p>
+                </div>
+                
+                <div class = "rightJustified">
+                    <img class = "cRIOImage" src = "cRIO.png" style = "width: 480px">
+                </div>
+            </div>
+            
+            <div>
+			    <button id="clickButton">Display Database</button>
+			    <div id="Database">
+                </div>
+            </div>
+			
+		</div>
+	
+			<script>
+				var myButton = document.getElementById("clickButton");
+				myButton.addEventListener('click', getDatabase, false);
+				
+				function getDatabase(){
+				
+					if (window.XMLHttpRequest){// code for IE7+, Firefox, Chrome, Opera, Safari
+					  var xmlhttp = new XMLHttpRequest();
+					}
+					else{// code for IE6, IE5
+					  var xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+					}
+					xmlhttp.onreadystatechange=function() { //triggered every time the readyState changes
+						if (xmlhttp.readyState==4 && xmlhttp.status==200){
+						  //readystate == 4 : request finished and response is ready. status == 200 : ok						
+						  document.getElementById("Database").innerHTML = xmlhttp.responseText; 
+						}
+					}
+					xmlhttp.open("GET","DB_GetAllRecords.php",true); //(method, url, async)
+					xmlhttp.send();
+				}
+			</script>
+
+		<div class = "footer"></div>
+	
+	</body> <!-- End of html body -->
+
+</html>
+

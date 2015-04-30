@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--
+//The following websites were used to aid the development of the project's code. Parts of the project code have been adapted from these websites:
+//w3schools. (N.D) Available from http://www.w3schools.com/googleAPI/default.asp [accessed 02/04/2015] Embedding a Google Map API
+//Google Developers. (N.D) Available from https://developers.google.com/maps/tutorials/fundamentals/adding-a-google-map#the_finished_code [Accessed 05/04/2015] Embedding a Google //Map API
+-->
+
+<html>
+    <head>
+		<title>UoM Smart Grid</title> <!-- The tab's title -->
+        <link rel='stylesheet' type='text/css' href='stylesheet.css'/>
+        <script src="https://maps.googleapis.com/maps/api/js"></script> <!--Script for google maps-->
+        <script>
+          function initialize() {
+            var mapCanvas = document.getElementById("map");
+            var mapOptions = {
+              center: new google.maps.LatLng(53.4613113, -2.2258667),
+              zoom: 13,
+              mapTypeId: google.maps.MapTypeId.ROADMAP
+            }
+            var map = new google.maps.Map(mapCanvas, mapOptions)
+             var marker = new google.maps.Marker({
+                position: new google.maps.LatLng(53.4685131,-2.2397796),
+                map: map,
+                title:"Test"
+            }); 
+          }
+          google.maps.event.addDomListener(window, 'load', initialize);
+        </script>
+	</head>
+	<body>
+	
+		<div class = "header" id = "mainHeader">
+			<img class = "manchesterLogo" src = "manchesterLogo.png">
+			<div class = "pageHeader">
+                <h5>Equipment Map</h5>
+            </div>
+		</div>
+        
+        <div class = "NavWrapper"> 
+            <div class = "navigationBar"> 
+                <a href="index.html">Home</a>
+                <a href="projectDescription.html">The Project</a>
+				<a href="equipmentProfiles.html">Equipment Profiles</a>
+                <a href="addEquipment.html">Add Equipment</a>
+                <a href="modifyDatabase.html">Modify Database</a>
+				<a href="equipmentMap.html">Equipment Map</a>
+                <a href="dataEmulation.html">Data Emulation</a>
+			</div>
+        </div>   
+		
+		<div class = "body" id = "mainBody">
+            
+			<div class = "wrapper" style = "height: 40px">
+                <p style = "margin-top: 10%; text-align: center;"> Work in progress. An example of what the page could look like is shown below.</p>
+            </div>
+            <div class = "map" id = "map" style = "width: 1300px; height: 600px; margin-left: 15%;">
+            
+            </div>
+            
+
+			
+		</div>
+	
+	</body> <!-- End of html body -->
+</html>
+

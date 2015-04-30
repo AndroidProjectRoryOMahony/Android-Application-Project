@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--The following websites were used to aid the development of the project's code. Parts of the project code have been adapted from these websites:
+w3schools. (N.D) AJAX Example Available from http://www.w3schools.com/ajax/tryit.asp?filename=tryajax_first [Accessed 23/11/2014] For connecting to the PHP script
+-->
+
+<html>
+    <head>
+		<title>UoM Smart Grid</title> <!-- The tab's title -->
+        <script>
+            function getDataValues() { //Using JSON
+                var xmlhttp = new XMLHttpRequest();
+                var url = "dataEmulation.php";
+
+                xmlhttp.onreadystatechange = function() {
+                    if(xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                        document.getElementById("data").innerHTML = JSON.parse(xmlhttp.responseText);
+                    }
+                }
+
+                xmlhttp.open("POST", url, true);
+                xmlhttp.send();
+            }
+        </script>
+        <!--Testing-->
+        <!--<script> //Can use to repeatedly call the php file 
+           setInterval(function(){ //Call the php file that creates random values every second to simulate the data system
+                getDataValues();
+            }, 3000);
+        </script>-->
+	</head>
+    
+	<body onload = "getDataValues()">
+
+        <div id = "data">
+        </div>
+
+	</body> <!-- End of html body -->
+    
+</html>
+

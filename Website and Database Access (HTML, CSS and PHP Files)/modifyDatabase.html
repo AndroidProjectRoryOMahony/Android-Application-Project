@@ -1,0 +1,164 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<!--The following websites were used to aid the development of the project's code. Parts of the project code have been adapted from these websites:
+w3schools. (N.D) AJAX Example Available from http://www.w3schools.com/ajax/tryit.asp?filename=tryajax_first [Accessed 23/11/2014] For connecting to the PHP script
+w3schools. (N.D) HTML Forms Available from http://www.w3schools.com/html/html_forms.asp [Accessed 24/11/2014] Implementing a form
+-->
+
+<html>
+    <head>
+		<title>UoM Smart Grid</title> <!-- The tab's title -->
+        <link rel='stylesheet' type='text/css' href='stylesheet.css'/>
+	</head>
+	<body onload = "getDataNamesFromDatabase()">
+	
+		<div class = "header" id = "mainHeader">
+			<img class = "manchesterLogo" src = "manchesterLogo.png">
+			<div class = "pageHeader">
+                <h5>Modify Database</h5>
+            </div>
+		</div>
+        
+        <div class = "NavWrapper"> 
+            <div class = "navigationBar"> 
+                <a href="index.html">Home</a>
+                <a href="projectDescription.html">The Project</a>
+				<a href="equipmentProfiles.html">Equipment Profiles</a>
+                <a href="addEquipment.html">Add Equipment</a>
+                <a href="modifyDatabase.html">Modify Database</a>
+				<a href="equipmentMap.html">Equipment Map</a>
+                <a href="dataEmulation.html">Data Emulation</a>
+			</div>
+        </div>    
+		
+		<div class = "body" id = "mainBody">
+			
+            <div class="formWrapper" style = "margin-top: 40px">
+                <form action="modifyDatabase.php" method="POST">
+                    Entry To Edit:<br>
+                    <select name = "dataNamesDropDown" id = "dataNames" onchange="updateFieldsFromDropDownMenu()">                    
+                    </select>
+                    <br><br>
+                    Name:<br>
+                    <input type="text" name="name" id="name">
+                    <br><br>
+					Location:<br>
+                    <input type="text" name="location" id="location">
+                    <br><br>
+					Data Type:<br>
+                    <input type="text" name="dataType" id="dataType">
+                    <br><br>
+                    Units:<br>
+                    <input type="text" name="units" id="units">
+                    <br><br>
+                    Web ID:<br>
+                    <input type="text" name="webID" id="webID">
+                    <br><br>
+                    ID:<br>
+                    <input type="text" name="ID" id="ID">
+                    <br><br>
+                    Status:<br>
+                   <input type="radio" name="status" id="online" value ="online" checked = "checked">Online <input type="radio" name="status" id="offline" value ="offline">Offline
+                    <br><br>
+					Coordinates (X,Y):<br>
+                    <input type="text" name="latitude" id="latitude">,<input type="text" name="longitude" id="longitude">
+                    <br><br>
+                    Password:<br>
+                    <input type="password" name="password">
+                    <br><br>
+                    <input type="submit" name="submit">
+                </form>
+            </div>
+            
+
+            <div>
+                <br>
+			    <div id="Database">
+                </div>
+            </div>
+
+			
+		</div>
+        
+        <script>
+            function getDataNamesFromDatabase(){
+                if (window.XMLHttpRequest){// code for IE7+, Firefox, Chrome, Opera, Safari
+                  var xmlhttp = new XMLHttpRequest();
+                }
+                else{// code for IE6, IE5
+                  var xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                xmlhttp.onreadystatechange=function() { //triggered every time the readyState changes
+                        if (xmlhttp.readyState==4 && xmlhttp.status==200){
+                        //readystate == 4 : request finished and response is ready. status == 200 : ok	
+                        //store result in a 2D array for later use
+                        var data = xmlhttp.responseText;
+                        var dataJSONObject = JSON.parse(data);
+                            //Testing
+                            /*console.log(dataJSONObject[0]);
+                            console.log(dataJSONObject[1]);
+                            console.log(dataJSONObject[2]);*/
+                        //Place each name into the drop down menu
+                            for(var i = 0; i<dataJSONObject.length; i++){
+                                var name = document.createElement("option");
+                                name.text = dataJSONObject[i];
+                                name.value = dataJSONObject[i];
+                                document.getElementById("dataNames").options.add(name);
+                            }
+                            updateFieldsFromDropDownMenu();
+                        }
+                }
+                xmlhttp.open("GET","DB_GetEntryNames.php",true); //(method, url, async)
+                xmlhttp.send();
+            }
+        </script>
+        
+        <script>
+            function updateFieldsFromDropDownMenu(){
+                var selectedItem = document.getElementById("dataNames").value;
+                var dataToGet = "dataEntry=" + selectedItem; 
+                
+                if (window.XMLHttpRequest){// code for IE7+, Firefox, Chrome, Opera, Safari
+                  var xmlhttp = new XMLHttpRequest();
+                }
+                else{// code for IE6, IE5
+                  var xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                
+                xmlhttp.open("POST","DB_GetSpecificEntry.php",true); //(method, url, async)
+                // Set content type header information for sending url encoded variables in the request //from https://www.developphp.com/video/JavaScript/Ajax-Post-to-PHP-File-XMLHttpRequest-Object-Return-Data-Tutorial
+                xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+               
+                
+                xmlhttp.onreadystatechange=function() { //triggered every time the readyState changes
+                    if (xmlhttp.readyState==4 && xmlhttp.status==200){
+                        //readystate == 4 : request finished and response is ready. status == 200 : ok	
+                        var data = xmlhttp.responseText;
+                        var specificDataJSONObject = JSON.parse(data);
+
+                        document.getElementById("name").value = specificDataJSONObject[0];
+                        document.getElementById("location").value = specificDataJSONObject[1];
+                        document.getElementById("dataType").value = specificDataJSONObject[2];
+                        document.getElementById("units").value = specificDataJSONObject[3];
+                        document.getElementById("webID").value = specificDataJSONObject[4];
+                        document.getElementById("ID").value = specificDataJSONObject[5];
+                        if(specificDataJSONObject[6] == "online"){
+                            document.getElementById("online").checked = true;
+                        }else{
+                            document.getElementById("offline").checked = true;
+                        }
+                        document.getElementById("latitude").value = specificDataJSONObject[7];
+                        document.getElementById("longitude").value = specificDataJSONObject[8]; 
+                    }
+                }
+                
+                xmlhttp.send(dataToGet);  
+            }
+        </script>
+		<div class = "footer"></div>
+	
+	</body> <!-- End of html body -->
+	
+</html>
+

@@ -1,0 +1,163 @@
+*{
+	font-family: Arial;	
+}
+
+body {
+    background-color: #888888; /* background colour of the webpage */ 
+	margin:0;
+}
+
+div {
+	/*position: relative;*/
+    display: block;
+}
+
+p{
+	margin: auto;
+	cursor: default;
+}
+
+a{
+    padding: 10px 10px;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+}
+	
+.manchesterLogo{
+	position: absolute; 
+	z-index: 1; 
+	text-align: left;
+	height: 80px;
+	background-color: #121212;
+	margin-left: 0px;
+}
+
+.header{
+	position: relative;
+	background-color: #121212;
+	width: 100%;
+	text-align: center;
+	display: table;
+}
+
+
+
+.body{
+	position: relative;
+	background-color: white;
+	height: 100vh;
+	width: 100%;
+	text-align: center;
+	display: table;
+    
+}
+
+.pageHeader{
+	display: table-cell;
+	vertical-align: middle;
+
+	background-color: inherit;
+	width: auto;
+	color: white;
+	font-size: 35px;
+    height: 0px;
+    
+}
+
+table{
+	border-collapse: collapse; /* improves the table visually */
+	margin: 15px auto;
+	margin-top: auto;
+	position: relative;
+}
+
+td, th{
+	height: 25px;
+	width: auto;
+	border: 1px solid black;
+	position: relative;
+	padding: 5px 8px;
+	
+	text-align: center;
+	vertical-align: middle;
+	background-color: white;
+	cursor: default;
+	font-size: 15px;
+	
+	-webkit-user-select: none;	/*prevents the user from being able to highlight anything: used so when the user is changing table values, the cell is not highlighted by accident*/
+    -khtml-user-select: none; /* Code for other browsers */
+    -moz-user-select: -moz-none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+
+.submit{ /* submit and submitButton combine to make a div with a paragraph inside it. The paragraphs format can then be easily changed */
+	-webkit-user-select: none;	/*prevents the user from being able to highligh anything: used so when the user is changing table values, the cell is not highlighted by accident*/
+    -khtml-user-select: none;
+    -moz-user-select: -moz-none;
+    -o-user-select: none;
+    user-select: none;
+	
+	background-color: #0066FF;
+	color: white;
+	border-radius: 25px;
+	height: 30px;
+	width: 200px;
+	font-size: 20px;
+	display: inline-block;
+	vertical-align: middle;
+	margin: auto;
+	cursor:pointer;
+}
+
+.submitButton{
+	cursor:pointer;
+	padding-top: 4px; /* Puts the text in the middle of the division */
+	background-color: transparant; 
+}
+
+.navigationBar {
+    height: 40px;
+    
+    display: table-cell;
+	vertical-align: middle;
+    width: auto;
+}
+
+.NavWrapper {
+    position: relative;
+		background-color: white;
+	width: 100%;
+	text-align: center;
+	display: table;
+    border-bottom: 1px solid black;
+}
+
+.leftJustified {
+    float: left;
+    padding: 30px 30px; 
+}
+
+.wrapper {
+    display: block;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 300px;
+}
+
+.rightJustified {
+    float: right;
+    padding: 30px 30px;
+}
+
+.ipAddress {
+    text-align: center
+}
+
+.formWrapper {
+    text-align: left;
+    margin-left: 45%;
+}

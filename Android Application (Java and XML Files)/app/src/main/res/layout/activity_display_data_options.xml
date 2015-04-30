@@ -1,0 +1,320 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:id="@+id/container"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    tools:context="com.example.rory.smart_grid_v2.DisplayDataOptions"
+    tools:ignore="MergeRootFrame">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:background="#EEEEEE"
+        tools:context="com.example.rory.smart_grid_v2.DisplayDataOptions$PlaceholderFragment">
+
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:id="@+id/user_options">
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="#000000"
+                    android:text="@string/select_pi_server_locations"
+                    android:id="@+id/select_pi_server_locations"
+                    android:layout_column="0"/>
+
+                <Spinner
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/pi_server_locations_spinner"
+                    android:layout_marginLeft="20dp"
+                    android:layout_column="1"
+                    android:layout_span="1"
+                    android:layout_weight="1"/>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_marginBottom="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="#000000"
+                    android:text="@string/select_data_type_to_display"
+                    android:id="@+id/select_data_type_to_display"
+                    android:layout_column="0" />
+
+                <Spinner
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/select_data_type_to_display_spinner"
+                    android:layout_marginLeft="20dp"
+                    android:layout_column="1"
+                    android:layout_span="1"
+                    android:layout_weight="1"/>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000000"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/select_data_to_display_from"
+                    android:id="@+id/select_data_to_display_from"
+                    android:layout_column="0" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_marginBottom="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000000"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/select_data_to_display_date"
+                    android:id="@+id/select_data_to_display_date_from"
+                    android:layout_column="0"
+                    android:layout_weight="1"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000000"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/selected_data_to_display_date_from"
+                    android:id="@+id/selected_data_to_display_date_from"
+                    android:layout_column="1"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="20dp"/>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/select_date"
+                    android:id="@+id/select_date_from"
+                    android:background="#FEFCFE"
+                    android:layout_column="2"
+                    android:layout_weight="1"/>
+
+            </TableRow>
+
+
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_marginBottom="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000000"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/select_data_to_display_time"
+                    android:id="@+id/select_data_to_display_time_from"
+                    android:layout_column="0"
+                    android:layout_weight="1"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000000"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/selected_data_to_display_time_from"
+                    android:id="@+id/selected_data_to_display_time_from"
+                    android:layout_column="1"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="20dp"/>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/select_time"
+                    android:id="@+id/select_time_from"
+                    android:background="#FEFCFE"
+                    android:padding="10sp"
+                    android:layout_column="2"
+                    android:layout_weight="1"/>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_marginTop="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000000"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/select_data_to_display_to"
+                    android:id="@+id/select_data_to_display_to"
+                    android:layout_column="0" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_marginBottom="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000000"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/select_data_to_display_date"
+                    android:id="@+id/select_data_to_display_date_to"
+                    android:layout_column="0"
+                    android:layout_weight="1"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000000"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/selected_data_to_display_date_to"
+                    android:id="@+id/selected_data_to_display_date_to"
+                    android:layout_column="1"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="20dp"/>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/select_date"
+                    android:id="@+id/select_date_to"
+                    android:background="#FEFCFE"
+                    android:padding="10sp"
+                    android:layout_column="2"
+                    android:layout_weight="1"/>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_marginBottom="40dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000000"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/select_data_to_display_time"
+                    android:id="@+id/select_data_to_display_time_to"
+                    android:layout_column="0"
+                    android:layout_weight="1"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000000"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/selected_data_to_display_time_to"
+                    android:id="@+id/selected_data_to_display_time_to"
+                    android:layout_column="1"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="20dp"/>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/select_time"
+                    android:id="@+id/select_time_to"
+                    android:background="#FEFCFE"
+                    android:padding="10sp"
+                    android:layout_column="2"
+                    android:layout_weight="1"/>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/display_live_value"
+                    android:id="@+id/display_live_data_only"
+                    android:gravity="center"
+                    android:background="#FEFCFE"
+                    android:onClick="passUserGraphicalOptions"
+                    android:layout_alignParentBottom="true"
+                    android:layout_span="3"
+                    android:layout_column="0"
+                    android:layout_weight="1"/>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000000"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="or"
+                    android:layout_gravity="center_horizontal"
+                    />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/submit_user_options"
+                    android:id="@+id/button4"
+                    android:background="#FEFCFE"
+                    android:onClick="passUserGraphicalOptions"
+                    android:layout_span="3"
+                    android:layout_column="0"
+                    android:layout_weight="1"/>
+            </TableRow>
+        </TableLayout>
+
+    </RelativeLayout>
+
+</FrameLayout>
+
