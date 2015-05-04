@@ -60,8 +60,8 @@ public class main_HTTP {
                 .setDefaultCredentialsProvider(credsProvider)
                 .build();*/
         try {
-        	HttpGet httpGet = new HttpGet("https://10.99.145.46/piwebapi"); //Attempting to conenct to the PI Web API
-            //HttpGet httpGet = new HttpGet("http://time.jsontest.com/"); //Site for testing JSON
+        	//HttpGet httpGet = new HttpGet("https://10.99.145.46/piwebapi"); //Attempting to conenct to the PI Web API
+            HttpGet httpGet = new HttpGet("http://time.jsontest.com/"); //Site for testing JSON
             CloseableHttpResponse response1 = httpclient.execute(httpGet);
             
             try {
@@ -172,10 +172,10 @@ public class main_HTTP {
                 	}	*/
                 }
                 //Testing
-                System.out.println("\nStart");	//Notice
-                System.out.println(map);		//Print out the contents of the hash map
-                System.out.println(map.get("time"));	//Print out a specific value from the hash map
-                System.out.println(map.get("date"));	//Print out a specific value from the hash map
+                //System.out.println("\nStart");	//Notice
+                //System.out.println(map);		//Print out the contents of the hash map
+                //System.out.println(map.get("time"));	//Print out a specific value from the hash map
+                //System.out.println(map.get("date"));	//Print out a specific value from the hash map
                 
                 EntityUtils.consume(entity1);	//Ensure the entity is fully consumed
  

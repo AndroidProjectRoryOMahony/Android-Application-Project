@@ -35,7 +35,7 @@ public class main_ftp {
 		
 		if(answer.equals("N")){
 			valueNumber = 20;
-			betweenMin = 0;
+			betweenMin = 50;
 			betweenMax = 100;
 			decimalPlaces = 3;
 		}else{
@@ -59,14 +59,14 @@ public class main_ftp {
 			program.printSyntheticValues();
 			System.out.println("Rippling values");
 			program.rippleValues();
-			System.out.println("Sleeping for 1 second");
+			//System.out.println("Sleeping for 1 second");
 			program.logout();
 			try{
 				Thread.sleep(1000);
 			}catch(InterruptedException ie){
 				
 			}
-			System.out.println("Awake");
+			//System.out.println("Awake");
 			program.createSyntheticValues(valueNumber, betweenMin, betweenMax, decimalPlaces); //number of values to create, range of values, decimal places
 		//}
 		//program.logout();
