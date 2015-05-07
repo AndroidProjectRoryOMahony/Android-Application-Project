@@ -25,10 +25,10 @@ if($_POST[password] == $password){
     $webID = $_POST[webID];
     $ID = $_POST[ID];
 
-    if($_POST[online] == true){
-        $status = "online"; 
+    if($_POST[status] == 'online'){
+        $status = "Online"; 
     } else{
-        $status = "offline"; 
+        $status = "Offline"; 
     }
 
     if($_POST[latitude] != NULL){

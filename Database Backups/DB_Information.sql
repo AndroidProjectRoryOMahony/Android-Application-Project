@@ -4,7 +4,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: May 06, 2015 at 04:58 PM
+-- Generation Time: May 07, 2015 at 12:36 PM
 -- Server version: 5.1.61
 -- PHP Version: 5.2.17
 
@@ -42,7 +42,7 @@ CREATE TABLE IF NOT EXISTS `DB_Information` (
   UNIQUE KEY `DB_ID` (`DB_ID`),
   UNIQUE KEY `DB_ID_3` (`DB_ID`),
   KEY `DB_ID_2` (`DB_ID`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=31 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=30 ;
 
 --
 -- Dumping data for table `DB_Information`
@@ -77,8 +77,7 @@ INSERT INTO `DB_Information` (`DB_ID`, `Name`, `Location`, `DataType`, `Units`, 
 (26, 'Weather.Whitworth.SolarRadiation', 'Whitworth', 'Solar Radiation', 'Unknown', 'P0P3M-CGJlpkKFXS0yV-1NhAIwAAAAUElTRVJWRVIxXFdFQVRIRVIuV0hJVFdPUlRILlNPTEFSUkFESUFUSU9O', 35, 'Online', 0, 0),
 (27, 'Weather.Whitworth.Temperature', 'Whitworth', 'Temperature', 'Unknown', 'P0P3M-CGJlpkKFXS0yV-1NhAFQAAAAUElTRVJWRVIxXFdFQVRIRVIuV0hJVFdPUlRILlRFTVBFUkFUVVJF', 21, 'Online', 0, 0),
 (28, 'Weather.Whitworth.WindDirection', 'Whitworth', 'Wind Direction', 'Unknown', 'P0P3M-CGJlpkKFXS0yV-1NhAGgAAAAUElTRVJWRVIxXFdFQVRIRVIuV0hJVFdPUlRILldJTkRESVJFQ1RJT04', 26, 'Online', 0, 0),
-(29, 'Weather.Whitworth.WindSpeed', 'Whitworth', 'Wind Speed', 'Unknown', 'P0P3M-CGJlpkKFXS0yV-1NhAGQAAAAUElTRVJWRVIxXFdFQVRIRVIuV0hJVFdPUlRILldJTkRTUEVFRA', 25, 'Online', 0, 0),
-(30, 'Example', 'Sackville Street', 'Test', 'Test', 'ExampleURL', 100, 'offline', 0, 0);
+(29, 'Weather.Whitworth.WindSpeed', 'Whitworth', 'Wind Speed', 'Unknown', 'P0P3M-CGJlpkKFXS0yV-1NhAGQAAAAUElTRVJWRVIxXFdFQVRIRVIuV0hJVFdPUlRILldJTkRTUEVFRA', 25, 'Online', 0, 0);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
